@@ -5,26 +5,26 @@ import anorm.SqlParser._
 import play.api.db._
 import play.api.Play.current
 
-case class Kitten(id: Long, name: String)
-case class SelectKitten(select1: String, select2: String, select3: String)
+case class Sku(id: Long, name: String)
+case class SelectSku(select1: String, select2: String, select3: String)
 case class Attribute(id: Long, label: String)
-case class KittenAttribute(id: Long, kittenId: Long, attributeId: Long)
+case class SkuAttribute(id: Long, skuId: Long, attributeId: Long)
 
-object Kitten {
-  val kitten = {
+object Sku {
+  val sku = {
     get[Long]("id") ~ 
     get[String]("name") map {
-      case id~name => Kitten(id, name)
+      case id~name => Sku(id, name)
     }
   }
 
-  def all(): List[Kitten] = DB.withConnection { implicit c =>
-    SQL("select * from kitten").as(kitten *)
+  def all(): List[Sku] = DB.withConnection { implicit c =>
+    SQL("select * from sku").as(kitten *)
   }
 
   def create(name: String) {
     DB.withConnection { implicit c =>
-      SQL("insert into kitten (name) values ({name})").on(
+      SQL("insert into sku (name) values ({name})").on(
         'name -> name
       ).executeUpdate()
     }
@@ -32,7 +32,7 @@ object Kitten {
 
   def delete(id: Long) {
     DB.withConnection { implicit c =>
-      SQL("delete from kitten where id = {id}").on(
+      SQL("delete from sku where id = {id}").on(
         'id -> id
       ).executeUpdate()
     }
@@ -56,18 +56,18 @@ object Attribute {
 }
 
 
-object KittenAttribute {
-  val kittenAttribute = {
+object SkuAttribute {
+  val skuAttribute = {
     get[Long]("id") ~ 
-    get[Long]("kitten_id") ~ 
+    get[Long]("sku_id") ~ 
     get[Long]("attribute_id") map {
-      case id~kittenId~attributeId => KittenAttribute(id, kittenId, attributeId)
+      case id~skuId~attributeId => SkuAttribute(id, kittenId, attributeId)
     }
   }
 
-  def all(): List[KittenAttribute] = DB.withConnection { implicit c =>
-    SQL("select * from kitten_attribute").as(kittenAttribute *)
+  def all(): List[SkuAttribute] = DB.withConnection { implicit c =>
+    SQL("select * from sku_attribute").as(kittenAttribute *)
   }
 
-  def allForKitten(kitten: Kitten): Seq[KittenAttribute] = all().filter(ka => ka.kittenId == kitten.id)
+  def allForSku(sku: Kitten): Seq[KittenAttribute] = all().filter(ka => ka.kittenId == kitten.id)
 }
