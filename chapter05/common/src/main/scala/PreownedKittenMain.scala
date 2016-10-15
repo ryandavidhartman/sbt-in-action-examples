@@ -1,5 +1,5 @@
 package org.pragmaticdemo
 
-object PreownedKittenMain extends App {
+object PragmaticDemoMain extends App {
   println("Hello, sbt world!")
 }
