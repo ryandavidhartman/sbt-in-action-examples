@@ -7,7 +7,7 @@ import NativePackagerKeys._
 
 // specs2 libraries.
 
-libraryDependencies += "org.specs2" %% "specs2" % "1.14" % "test"
+libraryDependencies += "org.specs2" %% "specs2" % "3.7" % "test"
 
 libraryDependencies += "org.pegdown" % "pegdown" % "1.0.2" % "test"
                             
