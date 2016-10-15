@@ -4,3 +4,14 @@ logs
 *.markdown
 .idea
 .idea_modules
+.idea*
+project/project
+project/target
+tmp
+.history
+dist
+*.iml
+.classpath
+.project
+.settings
+.DS_Store
