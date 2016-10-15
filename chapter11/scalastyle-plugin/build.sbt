@@ -2,7 +2,7 @@ version := "1.0"
 
 sbtPlugin := true
 
-organization := "org.preownedkittens.sbt"
+organization := "org.pragmaticdemo.sbt"
 
 name := "scalastyle-plugin"
 

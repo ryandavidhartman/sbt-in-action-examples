@@ -2,9 +2,9 @@ version := "1.0"
 
 sbtPlugin := true
 
-organization := "org.preownedkittens.sbt"
+organization := "org.pragmaticdemo.sbt"
 
 name := "depend-plugin"
 
-addSbtPlugin("org.preownedkittens.sbt" % "scalastyle-plugin" % "1.0")
+addSbtPlugin("org.pragmaticdemo.sbt" % "scalastyle-plugin" % "1.0")
 

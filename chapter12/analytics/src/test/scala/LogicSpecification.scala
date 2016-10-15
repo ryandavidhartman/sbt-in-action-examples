@@ -1,4 +1,4 @@
-package org.preownedkittens
+package org.pragmaticdemo
 
 import org.scalacheck.Properties
 import org.scalacheck.Prop.forAll

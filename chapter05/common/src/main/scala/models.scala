@@ -1,4 +1,4 @@
-package org.preownedkittens
+package org.pragmaticdemo
 
 case class Kitten(id: Long, 
                   attributes: Set[String])

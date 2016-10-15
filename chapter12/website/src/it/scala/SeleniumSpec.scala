@@ -1,4 +1,4 @@
-package org.preownedkittens;
+package org.pragmaticdemo;
 
 import org.scalatest._
 import org.scalatest.matchers.ShouldMatchers
@@ -19,7 +19,7 @@ class SeleniumSpec extends FlatSpec with ShouldMatchers with BeforeAndAfter with
 
   "Home page" should "redirect to kitten list" in {
     go to "http://localhost:9000"
-    currentUrl should startWith ("http://localhost:9000/kittens")
+    currentUrl should startWith ("http://localhost:9000/demo")
   }
 
   it should "show three dropdown lists of attributes in sorted order" in {
@@ -29,7 +29,7 @@ class SeleniumSpec extends FlatSpec with ShouldMatchers with BeforeAndAfter with
       list.sorted should be(list)
     }
 
-    go to homePage + "/kittens"
+    go to homePage + "/demo"
 
     assertListCompleteAndIsSorted(select("select1"))
     assertListCompleteAndIsSorted(select("select2"))

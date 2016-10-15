@@ -1,16 +1,16 @@
-import org.preownedkittens.sbt.ScalastylePlugin._
+import org.pragmaticdemo.sbt.ScalastylePlugin._
 
 version := "1.0"
 
-organization := "org.preownedkittens"
+organization := "org.pragmaticdemo"
 
 name := "sbt-test"
 
-org.preownedkittens.sbt.HelloPlugin.projectSettings
+org.pragmaticdemo.sbt.HelloPlugin.projectSettings
 
-org.preownedkittens.sbt.HelloPlugin.helloKey := "new message"
+org.pragmaticdemo.sbt.HelloPlugin.helloKey := "new message"
 
-org.preownedkittens.sbt.ScalastylePlugin.projectSettings
+org.pragmaticdemo.sbt.ScalastylePlugin.projectSettings
 
 scalastyleConfig in Test :=  file("test.xml")
 

@@ -6,12 +6,12 @@ import play.core.StaticApplication
 import play.navigator.PlayNavigator
 import play.api.data._
 import play.api.data.Forms._
-import org.preownedkittens.database._
+import org.pragmaticdemo.database._
 import controllers.Scalate
 
 object Routes extends PlayNavigator {
-  val index = GET on root to redirect("kittens")
-  val kittens = GET on "kittens" to { () => Application.kittens }
+  val index = GET on root to redirect("demo")
+  val demo = GET on "kittens" to { () => Application.kittens }
   val selected = POST on "selected" to { () => Application.selected }
   val purchase = POST on "purchase" to { () => Application.purchase }
 }
@@ -25,9 +25,9 @@ object Application extends Controller {
     )(SelectKitten.apply)(SelectKitten.unapply)
   )
 
-  def kittens = Action {
-    Ok(Scalate("app/views/kittens.scaml").render('title -> "Kitten List",
-                'kittens -> Kitten.all(), 'attributes -> Attribute.all()))
+  def demo = Action {
+    Ok(Scalate("app/views/demo.scaml").render('title -> "Kitten List",
+                'demo -> Kitten.all(), 'attributes -> Attribute.all()))
   }
 
   def purchase = TODO
@@ -43,14 +43,14 @@ object Application extends Controller {
   }
 
   def showSelectedKittens(id1: String, id2: String, id3: String) = {
-    import org.preownedkittens.Logic._
-    val buyerPreferences = org.preownedkittens.BuyerPreferences(Set(id1, id2, id3))
+    import org.pragmaticdemo.Logic._
+    val buyerPreferences = org.pragmaticdemo.BuyerPreferences(Set(id1, id2, id3))
 
-    val kittensWithLikelihood = Kitten.all().map{ k =>
-      (k, matchLikelihood(org.preownedkittens.Kitten(k.id, KittenAttribute.allForKitten(k).map("" + _.attributeId).toSet), buyerPreferences))
+    val demoWithLikelihood = Kitten.all().map{ k =>
+      (k, matchLikelihood(org.pragmaticdemo.Kitten(k.id, KittenAttribute.allForKitten(k).map("" + _.attributeId).toSet), buyerPreferences))
     }.sortWith((d1, d2) => d1._2 > d2._2).filter(_._2 > 0.5)
 
-    Ok(Scalate("app/views/selected.scaml").render('title -> "Selected kittens", 'kittens -> kittensWithLikelihood))
+    Ok(Scalate("app/views/selected.scaml").render('title -> "Selected demo", 'kittens -> kittensWithLikelihood))
   }
 
 }

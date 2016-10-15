@@ -1,4 +1,4 @@
-package org.preownedkittens.database
+package org.pragmaticdemo.database
 
 import anorm._
 import anorm.SqlParser._

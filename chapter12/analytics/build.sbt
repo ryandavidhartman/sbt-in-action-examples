@@ -30,7 +30,7 @@ libraryDependencies += "junit" % "junit" % "4.11" % "test"
 
 libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
 
-testOptions += Tests.Argument(TestFrameworks.JUnit, "-v", "-n", "--run-listener=com.preownedkittens.sbt.JUnitListener")
+testOptions += Tests.Argument(TestFrameworks.JUnit, "-v", "-n", "--run-listener=com.pragmaticdemo.sbt.JUnitListener")
 
 javaOptions in Test += "-Djunit.output.file=" + (target.value / "generated/junit.html").getAbsolutePath
 
@@ -39,7 +39,7 @@ javaOptions in Test += "-Djunit.output.file=" + (target.value / "generated/junit
 // Packaging
 //-----------
 
-mainClass := Some("org.preownedkittens.Analytics")
+mainClass := Some("org.pragmaticdemo.Analytics")
 
 packageArchetype.java_server
 
@@ -47,9 +47,9 @@ bashScriptExtraDefines += """addJava "-Danalytics.properties=${app_home}/../conf
 
 batScriptExtraDefines += """set _JAVA_OPTS=%_JAVA_OPTS% -Danalytics.properties=%ANALYTICS_HOME%\\conf\\analytics.properties"""
 
-maintainer := "Josh Suereth <pet-them-all@preowned-kittens.com>"
+maintainer := "Josh Suereth <pet-them-all@pragmatic-demo.com>"
 
-packageSummary := "Analytics server for prewoned-kittens.com"
+packageSummary := "Analytics server for prewoned-demo.com"
 
 packageDescription := """Contains the analytics of kitten-owner compatibilities."""
 

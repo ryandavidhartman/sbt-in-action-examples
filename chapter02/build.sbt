@@ -1,4 +1,4 @@
-name := "preowned-kittens"
+name := "pragmatic-demo"
 
 version := "1.0"
 

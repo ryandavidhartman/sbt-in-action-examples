@@ -1,4 +1,4 @@
-package org.preownedkittens
+package org.pragmaticdemo
 
 import org.specs2.mutable.Specification
 

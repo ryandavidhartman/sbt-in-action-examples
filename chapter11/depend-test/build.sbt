@@ -1,6 +1,6 @@
 version := "1.0"
 
-organization := "org.preownedkittens"
+organization := "org.pragmaticdemo"
 
 name := "depend-test"
 

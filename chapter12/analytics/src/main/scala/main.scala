@@ -1,4 +1,4 @@
-package org.preownedkittens
+package org.pragmaticdemo
 
 import java.io._
 import java.util.Properties

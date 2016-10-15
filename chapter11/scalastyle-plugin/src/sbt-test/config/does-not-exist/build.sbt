@@ -1,4 +1,4 @@
-org.preownedkittens.sbt.ScalastylePlugin.projectSettings
+org.pragmaticdemo.sbt.ScalastylePlugin.projectSettings
 
-org.preownedkittens.sbt.ScalastylePlugin.scalastyleConfig := file("does-not-exist.xml")
+org.pragmaticdemo.sbt.ScalastylePlugin.scalastyleConfig := file("does-not-exist.xml")
 

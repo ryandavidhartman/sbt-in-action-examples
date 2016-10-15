@@ -1,5 +1,5 @@
 
-package org.preownedkittens.sbt
+package org.pragmaticdemo.sbt
 
 import sbt._
 import sbt.Keys._

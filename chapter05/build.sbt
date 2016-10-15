@@ -1,8 +1,8 @@
-name := "preowned-kittens"
+name := "pragmatic-demo"
 
 version in ThisBuild := "1.0"
 
-organization in ThisBuild := "com.preownedkittens"
+organization in ThisBuild := "com.pragmaticdemo"
 
 // Custom keys for this build.
 

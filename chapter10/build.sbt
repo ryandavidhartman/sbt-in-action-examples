@@ -1,6 +1,6 @@
 import com.typesafe.sbt.SbtGit.git
 
-name := "preowned-kittens"
+name := "pragmatic-demo"
 
 // Custom keys for this build.
 
@@ -20,7 +20,7 @@ def PreownedKittenProject(name: String): Project = (
   .settings(org.scalastyle.sbt.ScalastylePlugin.Settings: _*)
   .settings(versionWithGit:_*)
   .settings(
-    organization := "com.preownedkittens",
+    organization := "com.pragmaticdemo",
     libraryDependencies += "org.specs2" %% "specs2" % "1.14" % "test",
     javacOptions in Compile ++= Seq("-target", "1.6", "-source", "1.6"),
     resolvers ++= Seq(
