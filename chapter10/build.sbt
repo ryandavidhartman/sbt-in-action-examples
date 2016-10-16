@@ -2,6 +2,8 @@ import com.typesafe.sbt.SbtGit.git
 
 name := "pragmatic-demo"
 
+scalaVersion in ThisBuild := "2.11.8"
+
 // Custom keys for this build.
 
 val gitHeadCommitSha = taskKey[String]("Determines the current git commit SHA")

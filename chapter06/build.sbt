@@ -1,5 +1,7 @@
 name := "pragmatic-demo"
 
+scalaVersion in ThisBuild := "2.11.8"
+
 version in ThisBuild := "1.0"
 
 organization in ThisBuild := "com.pragmaticdemo"
