@@ -15,6 +15,12 @@ object LogicSpec extends Specification {
       val result = Logic.matchLikelihood(glutter, prefs)
       result must beLessThan(0.001)
     }
+    "be 50% when no attributes match" in {
+      val glutter = Sku(1, List("roofing", "glutter"))
+      val prefs = BuyerPreferences(List("roofing", "wiring"))
+      val result = Logic.matchLikelihood(glutter, prefs)
+      result equals (0.5)
+    }
     "correctly handle an empty BuyerPreferences" in {
       val glutter = Sku(1, List("roofing", "glutter"))
       val prefs = BuyerPreferences(List())
