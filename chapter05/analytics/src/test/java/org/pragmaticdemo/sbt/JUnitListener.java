@@ -1,4 +1,4 @@
-package com.preownedkittens.sbt;
+package com.pragmaticdemo.sbt;
 
 import org.junit.*;
 import java.io.*;

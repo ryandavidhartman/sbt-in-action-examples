@@ -11,7 +11,7 @@ git.baseVersion := "0.1"
 val scalastyleReport = taskKey[File]("creates a report from Scalastyle")
 
 // Common settings/definitions for the build
-def PreownedKittenProject(name: String): Project = (
+def PragmaticDemoProject(name: String): Project = (
   Project(name, file(name))
   .settings( Defaults.itSettings : _*)
   .settings(org.scalastyle.sbt.ScalastylePlugin.Settings: _*)
@@ -47,7 +47,7 @@ gitHeadCommitSha in ThisBuild := Process("git rev-parse HEAD").lines.head
 // Projects in this build
 
 lazy val common = (
-  PreownedKittenProject("common")
+  PragmaticDemoProject("common")
   settings(
     makeVersionProperties := {
       val propFile = (resourceManaged in Compile).value / "version.properties"
@@ -60,13 +60,13 @@ lazy val common = (
 )
 
 val analytics = (
-  PreownedKittenProject("analytics")
+  PragmaticDemoProject("analytics")
   dependsOn(common)
   settings()
 )
 
 val website = (
-  PreownedKittenProject("website")
+  PragmaticDemoProject("website")
   dependsOn(common, analytics)
   settings()
 )
